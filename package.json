@@ -1,0 +1,19 @@
+{
+  "name": "iminabar-static-recipes",
+  "version": "0.1.0",
+  "description": "Simple static site generator of mobile optimized cooking recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "recipe",
+    "static",
+    "ssg",
+    "generator",
+    "node",
+    "cooking"
+  ],
+  "author": "Agustin Amenabar L.",
+  "license": "MIT"
+}
