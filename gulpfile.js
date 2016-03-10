@@ -8,12 +8,19 @@ var matter = require('gray-matter');
 var textile = require('gulp-textile');
 var wrap = require('gulp-wrap');
 var handlebars = require('handlebars');
+var partialLoader = require('partials-loader');
 //var del = require('del');
 var fs = require('fs');
 
-gulp.task('html', function() {
-    var template = fs.readFileSync('src/templates/article.html', 'utf8');
-    var uncompiledTemplate = handlebars.compile(template);
+gulp.task('html', function(done) {
+    partialLoader.handlebars({ template_engine_reference: handlebars,
+                            template_root_directories: './src/templates',
+                            partials_directory_names: 'partials',
+                            template_extensions: 'hbr',
+                            delimiter_symbol: '/'
+                        });
+    var uncompiledArticleTemplate = handlebars.compile(fs.readFileSync('src/templates/article.hbr', 'utf8'));
+    var uncompiledListTemplate = handlebars.compile(fs.readFileSync('src/templates/list.hbr', 'utf8'));
     return gulp.src('src/content/*.textile')
 
         // Extract YAML front-matter using gulp-data
@@ -42,8 +49,13 @@ gulp.task('html', function() {
 
         //*
         .pipe(data(function(file) {
-            console.log('\nA file:',file.contents,'\n\n')
-            file.contents = new Buffer(uncompiledTemplate({file:file}));
+            console.log('\n---- file data:',file.data,'\n\n')
+            var dataHolder = {file:file, siteTitle: 'Recetas Probadas y Aprobadas'};
+            if (file.data.children.length) {
+                file.contents = new Buffer(uncompiledListTemplate(dataHolder));
+            } else {
+                file.contents = new Buffer(uncompiledArticleTemplate(dataHolder));
+            }
             return file;
         }))
         //*/

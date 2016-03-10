@@ -1,0 +1,8 @@
+<nav class="recipe-list">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            {{#file.data.root.data.children}}
+            <li><a href=".{{data.url}}">{{data.title}}</a></li>
+            {{/file.data.root.data.children}}
+        </ul>
+    </nav>

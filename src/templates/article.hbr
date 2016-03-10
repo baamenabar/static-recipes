@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <title>{{file.data.title}} | {{siteTitle}}</title>
+</head>
+<body>
+    {{> templates/partials/nav}}
+
+<h1>{{file.data.title}}</h1>
+<section>
+    {{{file.contents}}}
+</section>
+</body>
+</html>

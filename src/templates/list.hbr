@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <title>{{siteTitle}}</title>
+</head>
+<body>
+    {{> templates/partials/nav}}
+
+<h1>{{file.data.title}}</h1>
+<section>
+    {{#file.data.root.data.children}}
+    <article><a href=".{{data.url}}">
+    <h1>{{data.title}}</h1>
+        <p>Bajada de texto lorem ipsum de una pequeña descripción de la receta.</p>
+    </a></article>
+    {{/file.data.root.data.children}}
+</section>
+</body>
+</html>
