@@ -9,7 +9,8 @@ var textile = require('gulp-textile');
 var wrap = require('gulp-wrap');
 var handlebars = require('handlebars');
 var partialLoader = require('partials-loader');
-//var del = require('del');
+var argv = require('yargs').argv;
+var del = require('del');
 var fs = require('fs');
 
 gulp.task('html', function(done) {
@@ -30,15 +31,7 @@ gulp.task('html', function(done) {
             return m.data;
         }))
 
-        // markdown -> HTML
-        /*
-        .pipe(data(function (data) {
-            console.log('pre-textile',data);
-            var rendered = textile();
-            //console.log(rendered);
-            return rendered.data;
-        }))
-        //*/
+        // textile -> HTML
         .pipe(textile())
 
         // Rename to .html
@@ -49,7 +42,7 @@ gulp.task('html', function(done) {
 
         //*
         .pipe(data(function(file) {
-            console.log('\n---- file data:',file.data,'\n\n')
+            if(argv.verbose)console.log('\n---- file data:',file.data,'\n\n')
             var dataHolder = {file:file, siteTitle: 'Recetas Probadas y Aprobadas'};
             if (file.data.children.length) {
                 file.contents = new Buffer(uncompiledListTemplate(dataHolder));
@@ -58,21 +51,12 @@ gulp.task('html', function(done) {
             }
             return file;
         }))
-        //*/
-        /*
-        // Wrap file in template
-        .pipe(wrap(
-          { src: 'src/templates/article.html' },
-          { siteTitle: 'Recetas Probadas y Aprobadas'},
-          { engine: 'handlebars' }
-        ))
-        //*/
 
         // Output to build directory
         .pipe(gulp.dest('public/'));
 });
 
-/*
+
 gulp.task('clean', function(cb) {
     return del('public/', cb);
-});*/
+});

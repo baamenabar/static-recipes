@@ -1,5 +1,6 @@
 ---
 title: Pan rústico de masa madre
+lead: Una hogaza redonda de miga esponjosa, un pan para toda la semana.
 ---
 
 h1. Pan rústico de masa madre

@@ -1,5 +1,6 @@
 ---
 title: Pollo Tikka Masala
+lead: Uno de los platos más reconocibles de la cocina hindú. Un curry de pollo para chuparse los dedos.
 ---
 
 h1. Pollo Tikka Masala

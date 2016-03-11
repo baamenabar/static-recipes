@@ -1,5 +1,6 @@
 ---
 title: Daikiritos
+lead: Un refrescante cóctail de fruta, invento de la familia y excusa perfecta para juntarse a conversar.
 ---
 
 h1. Daikiritos

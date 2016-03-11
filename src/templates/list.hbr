@@ -10,9 +10,9 @@
 <h1>{{file.data.title}}</h1>
 <section>
     {{#file.data.root.data.children}}
-    <article><a href=".{{data.url}}">
-    <h1>{{data.title}}</h1>
-        <p>Bajada de texto lorem ipsum de una pequeña descripción de la receta.</p>
+    <article class="article-preview"><a href=".{{data.url}}">
+    <h1 class="article-preview__title">{{data.title}}</h1>
+        <p class="article-preview__lead">{{data.lead}}</p>
     </a></article>
     {{/file.data.root.data.children}}
 </section>
