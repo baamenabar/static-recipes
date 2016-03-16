@@ -1,13 +1,16 @@
 ---
 title: Pollo Tikka Masala
 lead: Uno de los platos más reconocibles de la cocina hindú. Un curry de pollo para chuparse los dedos.
+coverImg:imgs/pollo-tikka-masala-en-la-mesa-600.jpg
 ---
 
 h1. Pollo Tikka Masala
 
 h2. Cómo hacerlo en Chile
 
-p.intro Habiendo probado este plato hindú y luego verlo preparado en Tastemade por los tipos de Sorted, me tenté y me tiré a hacerlo, algunas cosas son imposibles de pillar en supermercado, pero se pueden hacer con un poco de pericia o reemplazar.
+p(intro). Habiendo probado este plato hindú y luego verlo preparado en Tastemade por los tipos de Sorted, me tenté y me tiré a hacerlo, algunas cosas son imposibles de pillar en supermercado, pero se pueden hacer con un poco de pericia o reemplazar.
+
+!imgs/pollo-tikka-masala-en-la-mesa-600.jpg(Tikka Masala servido en una fuente en la mesa.)!
 
 h2. Ingredientes
 

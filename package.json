@@ -25,12 +25,18 @@
     "gray-matter": "^2.0.2",
     "gulp": "^3.9.1",
     "gulp-data": "^1.2.1",
+    "gulp-imagemin": "^2.4.0",
     "gulp-rename": "^1.2.2",
+    "gulp-responsive-images": "0.0.3",
     "gulp-ssg": "^2.2.1",
     "gulp-textile": "0.0.1",
     "gulp-wrap": "^0.11.0",
     "handlebars": "^4.0.5",
     "partials-loader": "^0.1.3",
     "yargs": "^4.2.0"
+  },
+  "dependencies": {
+    "imagemin-jpegoptim": "^4.1.0",
+    "imagemin-mozjpeg": "^5.1.0"
   }
 }
