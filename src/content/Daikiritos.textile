@@ -1,6 +1,7 @@
 ---
 title: Daikiritos
 lead: Un refrescante cóctail de fruta, invento de la familia y excusa perfecta para juntarse a conversar.
+coverImg: imgs/daikirito-vaso-600.jpg
 ---
 
 h1. Daikiritos
@@ -8,6 +9,8 @@ h1. Daikiritos
 h2. Un sorprendente cóctail frutal inventado por nosotros
 
 p. Siempre hemos sido fanáticos de los mojitos y tenemos plantas de hieba buena repartida por todo el mundo. Así mismo una vez hicimos unos daikiris, la siguiente vez inventamos los Daikiritos.
+
+!imgs/daikirito-vaso-600.jpg(Se ve muy colorido pero es un cóctail bastante fuerte)!
 
 h2. Ingredientes
 
@@ -21,12 +24,15 @@ h3. Para 6 personas
 * Manojo de hierba buena, con tallos y todo
 * [opcional] 350cc de agua tónica
 
-# Para decoración corta varias partes de arriba de las ramitas de hierba buena y resérvalas para más tarde.
+h3. Preparación 
 
-# Meter todos los ingredientes menos el agua tónica en la licuadora y moler.
+Para la decoración del final, corta varias partes de arriba de las ramitas de hierba buena y resérvalas para más tarde.
 
-# Vierte el contenido en copas o vasos.
+Meter todos los ingredientes menos el agua tónica en la licuadora y moler.
 
-# Pon las hojas reservadas sobre el cóctail para dornar.
+Vierte el contenido en copas o vasos.
+
+Pon las hojas reservadas sobre el cóctail para dornar.
+
 
 *Salud!*

@@ -46,7 +46,7 @@ gulp.task('html', function(done) {
         //*
         .pipe(data(function(file) {
             if(argv.verbose)console.log('\n---- file data:',file.data,'\n\n')
-            var dataHolder = {file:file, siteTitle: 'Recetas Probadas y Aprobadas'};
+            var dataHolder = {file:file, siteTitle: 'Ñam Ñam: Recetas Probadas y Aprobadas'};
             if (file.data.children.length) {
                 file.contents = new Buffer(uncompiledListTemplate(dataHolder));
             } else {

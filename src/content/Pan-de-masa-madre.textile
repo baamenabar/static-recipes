@@ -1,6 +1,7 @@
 ---
 title: Pan rústico de masa madre
 lead: Una hogaza redonda de miga esponjosa, un pan para toda la semana.
+coverImg: imgs/pan-masa-madre-hogaza-horneada-600.jpg
 ---
 
 h1. Pan rústico de masa madre
@@ -8,6 +9,8 @@ h1. Pan rústico de masa madre
 h2. De la receta de Ibán Yarza
 
 p. Esta receta es recomendada hacer un día que te vas a quedar en la casa, pues la masa requiere constante intervención, aunque cada intervención es de segundos, se hace muchas veces durante la mañana.
+
+!imgs/pan-masa-madre-hogaza-horneada-600.jpg(La hogaza recién salida del horno)!
 
 h3. Ingredientes
 
@@ -25,16 +28,27 @@ h2. El día del pan
 
 # Se mezclan todos los ingredientes y se amasan. Se tapa.
 # Espera ½ hora.
-# Amasar cada 10-15 segundos (1).
+# Amasar por 10-15 segundos (1).
 # Espera ½ hora (1).
-# Amasar cada 10-15 segundos (2).
+# Amasar por 10-15 segundos (2).
 # Espera ½ hora (2).
-# Amasar cada 10-15 segundos (3).
+# Amasar por 10-15 segundos (3).
 # Espera ½ hora (3).
-# Amasar cada 10-15 segundos (4).
-# Espera ½ hora (4).
+# Amasar por 10-15 segundos (4).
+# Espera 1 y ½ horas.
+# Plegar sin amasar.
+# Espera 1 y ½ horas.
+# Formar la hogaza.
+# Leudar por 2 a 4 horas.
+# Prender el Horno al máximo (250ºC) (15 a 20 minutos)
+# Meter el pan y hornear por 10 minutos al máximo.
+# Bajar a 200ºC y hornear por 50 minutos más.
 
-Dándole ese tiempo de amasado y reposo hasta que esté amasado del todo. Para facilitar el amasado aceitar generosamente la superficie. Repetir este proceso unas 4 veces, al final casi no será necesario aceitar la superficie.
+Dándole ese tiempo de amasado y reposo hasta que esté amasado del todo. 
+
+El amasado de 15 segundos consiste en estirar la masa, plegar la masa en dos, girar 90º y repetir hasta que vaya ganando elasticiad.
+
+Para facilitar el amasado aceitar generosamente la superficie. Repetir este proceso unas 4 veces, al final casi no será necesario aceitar la superficie.
 
 Dejar reposar durante *3 horas*, a mitad del proceso (1 hora y media), opcionalmente se le puede dar un pliegue en ambos sentidos para tensar la masa.
 

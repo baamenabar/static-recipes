@@ -11,8 +11,11 @@
 <section>
     {{#file.data.root.data.children}}
     <article class="article-preview"><a href=".{{data.url}}">
-    <h1 class="article-preview__title">{{data.title}}</h1>
+		<h1 class="article-preview__title">{{data.title}}</h1>
         <p class="article-preview__lead">{{data.lead}}</p>
+        {{#if data.coverImg}}
+        <img src="{{data.coverImg}}" alt="" width="600">
+        {{/if}}
     </a></article>
     {{/file.data.root.data.children}}
 </section>
