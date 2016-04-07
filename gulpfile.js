@@ -13,9 +13,22 @@ var partialLoader = require('partials-loader');
 var responsive = require('gulp-responsive-images');
 var imagemin = require('gulp-imagemin');
 var imageminMozjpeg = require('imagemin-mozjpeg');
+var postcss = require('gulp-postcss');
+var precss = require('precss');
+var sass = require('gulp-sass');
 var del = require('del');
 var fs = require('fs');
+var taskListing = require('gulp-task-listing');
 
+// Add a task to render the output 
+gulp.task('help', taskListing);
+
+/**
+ * Markup builder:
+ * * Prepares the templates
+ * * Parses the .textile documents
+ * * Puts everything together
+ */
 gulp.task('html', function(done) {
     partialLoader.handlebars({ template_engine_reference: handlebars,
                             template_root_directories: './src/templates',
@@ -59,6 +72,40 @@ gulp.task('html', function(done) {
         .pipe(gulp.dest('public/'));
 });
 
+
+/**
+ * Creates CSS using postCSS
+ * 
+ */
+gulp.task('css', function () {
+
+  // Array of transformations to pass into post CSS.
+  // This could end up in it's own file.
+  var transformations = [
+    require('postcss-strip-inline-comments'),
+    precss({ /*options*/ })
+    ];
+
+  return gulp.src('src/css/**/*.scss')
+  .pipe(postcss(transformations, {syntax:require('postcss-scss')} ))
+  .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('sass', function () {
+  var transformations = [];
+
+  return gulp.src('src/css/*.scss')
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(postcss(transformations))
+  .pipe(gulp.dest('public/css'));
+});
+
+
+/**
+ * Image manipulations: 
+ * * Creates different sizes for images
+ * * Minifies using moz-jpeg
+ */
 gulp.task('imgs', function () {
   gulp.src('src/imgs/**/*')
     .pipe(responsive({
