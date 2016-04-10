@@ -14,8 +14,12 @@ var responsive = require('gulp-responsive-images');
 var imagemin = require('gulp-imagemin');
 var imageminMozjpeg = require('imagemin-mozjpeg');
 var postcss = require('gulp-postcss');
+var scssSyntax = require('postcss-scss');
 var precss = require('precss');
 var sass = require('gulp-sass');
+var stylelint = require('stylelint');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
 var del = require('del');
 var fs = require('fs');
 var taskListing = require('gulp-task-listing');
@@ -72,32 +76,53 @@ gulp.task('html', function(done) {
         .pipe(gulp.dest('public/'));
 });
 
+var nanoConfig = {
+        autoprefixer: false,
+        safe: true
+      };
+var autoprefixerConfig = { browsers: ['> 1%', 'last 3 versions', 'Android >= 4', 'iOS >= 7'] };
+
+  // This will output what browsers are considered and what properties will be preffixed 
+  //console.log(autoprefixer(autoprefixerConfig).info());
 
 /**
  * Creates CSS using postCSS
- * 
  */
 gulp.task('css', function () {
 
   // Array of transformations to pass into post CSS.
   // This could end up in it's own file.
   var transformations = [
-    require('postcss-strip-inline-comments'),
-    precss({ /*options*/ })
+      stylelint(),
+      require('postcss-strip-inline-comments'),
+      precss({ /*options*/ }),
+      autoprefixer(autoprefixerConfig),
+      cssnano(nanoConfig)
     ];
 
-  return gulp.src('src/css/**/*.scss')
-  .pipe(postcss(transformations, {syntax:require('postcss-scss')} ))
+  return gulp.src('src/css/*.scss')
+  .pipe(postcss(transformations, {syntax:scssSyntax} ))
+  .pipe(rename({ extname: '.css' }))
   .pipe(gulp.dest('public/css'));
 });
 
+/**
+ * Creates CSS using Sass and postCSS
+ */
 gulp.task('sass', function () {
-  var transformations = [];
+  var preTransformations = [
+    stylelint()
+  ];
+  var postTransformations = [
+    autoprefixer(autoprefixerConfig),
+    cssnano(nanoConfig)
+  ];
 
   return gulp.src('src/css/*.scss')
+  .pipe(postcss(preTransformations, {syntax:scssSyntax}))
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-  .pipe(postcss(transformations))
-  .pipe(gulp.dest('public/css'));
+  .pipe(postcss(postTransformations))
+  .pipe(gulp.dest('public/scss'));
 });
 
 
