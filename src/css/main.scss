@@ -1,0 +1,17 @@
+@import 'partials/vars';
+@import 'partials/_titles.scss';
+
+// first comment
+.one-box, .and-second-box + .sibling-box {
+    border-bottom: $border solid $color-red;
+    display: flex;
+    
+    // second comment
+    p {
+        // third comment 
+        color: $color-grey;//after inline comment
+    }
+    @media screen and (min-width: 30em) {
+        background-color: #DDD;
+    }
+}

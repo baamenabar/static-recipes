@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-ES">
+<link rel="stylesheet" href="./css/main.css">
 <head>
     <meta charset="utf-8">
     <title>{{file.data.title}} | {{siteTitle}}</title>
@@ -8,7 +9,7 @@
     {{> templates/partials/nav}}
 
 <h1>{{file.data.title}}</h1>
-<section>
+<section class="one-box">
     {{{file.contents}}}
 </section>
 </body>

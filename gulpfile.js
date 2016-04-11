@@ -20,6 +20,7 @@ var sass = require('gulp-sass');
 var stylelint = require('stylelint');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var fs = require('fs');
 var taskListing = require('gulp-task-listing');
@@ -101,8 +102,10 @@ gulp.task('css', function () {
     ];
 
   return gulp.src('src/css/*.scss')
+  .pipe(sourcemaps.init())
   .pipe(postcss(transformations, {syntax:scssSyntax} ))
   .pipe(rename({ extname: '.css' }))
+  .pipe(sourcemaps.write('.'))//this path is relative to the outputed css file
   .pipe(gulp.dest('public/css'));
 });
 
@@ -120,8 +123,10 @@ gulp.task('sass', function () {
 
   return gulp.src('src/css/*.scss')
   .pipe(postcss(preTransformations, {syntax:scssSyntax}))
+  .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
   .pipe(postcss(postTransformations))
+  .pipe(sourcemaps.write('.'))//this path is relative to the outputed css file
   .pipe(gulp.dest('public/scss'));
 });
 
@@ -167,7 +172,6 @@ gulp.task('imgs', function () {
 
     .pipe(gulp.dest('public/imgs'));
 });
-
 
 gulp.task('clean', function(cb) {
     return del('public/', cb);
